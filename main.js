@@ -1,32 +1,15 @@
-nameofstudentarray=[];
+menu_list_array - ["Chicken Tandoori Pizza", 
+"Veg Supreme Pizza",
+ "Paneer Tikka Pizza", 
+ "Deluxe Veggie Pizza", 
+"Veg Extravaganza Pizza"];
 
-function submit()
-{
-    var name1=document.getElementById("1").value;
-    var name2=document.getElementById("2").value;
-    var name3=document.getElementById("3").value;
-    var name4=document.getElementById("4").value;
-
-
-    nameofstudentarray.push(name1);
-    nameofstudentarray.push(name2);
-    nameofstudentarray.push(name3);
-    nameofstudentarray.push(name4);
-
-    console.log(nameofstudentarray);
-
-    document.getElementById("display_name").innerHTML=nameofstudentarray;
-document.getElementById("submit").style.display="inline-block";
-document.getElementById("sorting").style.display="inline-block";
-
-
-
-}
-
-
-function sorting()
-{
-    nameofstudentarray.sort();
-    console.log(nameofstudentarray);
-    document.getElementById("display_name").innerHTML=nameofstudentarray;
+function getmenu()
+{ var htmldata;
+     htmldata="<ol class='menulist'>"
+      menu_list_array.sort(); 
+      for(var i=0;i<menu_list_array.length;i++)
+      { htmldata+htmldata+'<li>' + menu_list_array[i] + '</li>'
+     } htmldata=htmldata+"</ol>" 
+     document.getElementById("display_menu").innerhtml = htmldata; 
 }
